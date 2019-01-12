@@ -52,7 +52,8 @@ h6 {
 }
 
 .bg-dark {
-  background-color: #212529 !important;
+  background-color: #FE3637 !important; 
+  /* background-image: url("../img/header.jpg"); */
 }
 
 .text-faded {
@@ -329,15 +330,16 @@ header.masthead p {
 /* layout.css Style */
 .upload-drop-zone {
   /* height: 200px; */
-  border-width: 2px;
-  margin-bottom: 20px;
+  border-width: 4px;
+  padding: 2px;
+  margin-bottom: 25px;
 }
 
 /* skin.css Style*/
 .upload-drop-zone {
   /* color: #ccc; */
-  border-style: dashed;
-  border-color: #ccc;
+  border-style: dashed; 
+  border-color: black;
   text-align: center
 }
 .upload-drop-zone.drop {
@@ -374,4 +376,11 @@ header.masthead p {
 #upload-inner-container {
   background-color: #FAD9D8;
   padding-bottom: 15px;
+  /* background-image: url("../img/header.jpg"); */
+}
+
+/* Drop Shadow Effect */
+img {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
