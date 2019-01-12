@@ -43,8 +43,12 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.aboutpage {
+  background-color: #FE3637 !important;
+}
+
 .bg-primary {
-  background-color: #F05F40 !important;
+  background-color: #FE3637 !important;
 }
 
 .bg-dark {
