@@ -41,9 +41,6 @@
 </head>
 
 <body id="page-top">
-
-
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -63,6 +60,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#demo">Demo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#results">Results</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -91,33 +94,39 @@
   </header>
 
   <!-- NEW PAGE OSHTON -->
-  <div class="aboutpage">
+  <section class="bg-primary" id="about">
+    <div class="aboutpage">
       <div class="row">
         <div class="col">
-            <br /><br />
-            <h2 style="color: white; text-align:center; font-family: Helvetica Neue">About the Project</h2>
-            <p style="text-align: center; color: white;">______________</p>
-            <p class="text-left" style="padding:50px; font-size: 14px; color: white">Dear Fellow User, <br /><br />  We create things for a few reasons. In life, we experience so much fragmentation of thought and feeling. For us, creating art through engineering and photography brings things back together. 
-              In my own work, that is true throughout the process. At the beginning, developing the basic raw materials for the work is deeply reflective and informative. Later, bringing those materials together into a form—distilling and shaping movement, creating a context, working to something that feels cohesive and complete. That’s incredibly powerful for us—something that really keeps us going.
-              <br /><br />Sincerely,<br /><br /> The 2B1S Team
-            </p>
+          <br><br>
+          <h2 style="color: white; text-align:center; font-family: Helvetica Neue">About the Project</h2>
+          <p style="text-align: center; color: white;">______________</p>
+          <p class="text-left" style="padding:50px; font-size: 14px; color: white">Dear Fellow User, <br><br> We create
+            things for a few reasons. In life, we experience so much fragmentation of thought and feeling. For us,
+            creating art through engineering and photography brings things back together.
+            In my own work, that is true throughout the process. At the beginning, developing the basic raw materials
+            for the work is deeply reflective and informative. Later, bringing those materials together into a
+            form—distilling and shaping movement, creating a context, working to something that feels cohesive and
+            complete. That’s incredibly powerful for us—something that really keeps us going.
+            <br><br>Sincerely,<br><br> The 2B1S Team
+          </p>
         </div>
         <div class="col">
-          <br /><br />
+          <br><br>
           <h2 style="color: white; text-align:center; font-family: Helvetica Neue">About the Creators</h2>
-          
+
           <p style="text-align: center; color: white;">______________</p>
-            <br />
-            <img src="img/Stewart.png" alt="Stewart" height="133.12" width="238" style="padding-left: 95px; padding-right: 15px;">
-            <img src="img/Oshton.png" alt="Oshton" height="175.5" width="150" style="padding-right: 15px">
-            <img src="img/Tejas.png" alt="Tejas" height="134.16" width="144" style="padding-right: 15px"><br />
-            <img src="img/Edmond.png" alt="Edmond" height="133.12" width="313" style="padding-left: 165px; padding-right: 15px">
-            
-            <img src="img/Ohad.jpg" alt="Ohad" height="130" width="100"><br /><br />
+          <br>
+          <img src="img/Stewart.png" alt="Stewart" height="133.12" width="238" style="padding-left: 95px; padding-right: 15px;">
+          <img src="img/Oshton.png" alt="Oshton" height="175.5" width="150" style="padding-right: 15px">
+          <img src="img/Tejas.png" alt="Tejas" height="134.16" width="144" style="padding-right: 15px"><br>
+          <img src="img/Edmond.png" alt="Edmond" height="133.12" width="313" style="padding-left: 165px; padding-right: 15px">
+
+          <img src="img/Ohad.jpg" alt="Ohad" height="130" width="100"><br><br>
         </div>
       </div>
     </div>
-  <section class="bg-primary" id="about">
+
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
@@ -269,7 +278,7 @@
     </div>
   </section>
 
-  <section class="bg-dark text-black">
+  <section class="bg-dark text-black" id="demo">
     <div class="container" id="upload-container">
       <div class="text-center" id="upload-inner-container">
         <div id="total-drop-area">
@@ -287,12 +296,14 @@
 
         </div>
 
-        <img id="img-preview" style="margin-top: 20px; border-style: dashed; border-color: #ccc; border-width: 2px;" src="" width="420px" alt="Image preview...">
+        <img id="img-preview" style="margin-top: 20px; border-style: dashed; border-color: #ccc; border-width: 2px;"
+          src="" width="420px" alt="Image preview...">
 
         <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
           <br>
           <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
-          <button type="button" onclick="clearFiles()" class="btn btn-sm btn-primary" id="js-upload-cancel">Cancel upload</button>
+          <button type="button" onclick="clearFiles()" class="btn btn-sm btn-primary" id="js-upload-cancel">Cancel
+            upload</button>
         </form>
       </div>
     </div>
