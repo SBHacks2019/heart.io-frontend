@@ -3,6 +3,8 @@
 // UPLOAD CLASS DEFINITION
 // ======================
 
+$('#img-preview').hide();
+
 var dropZone = document.getElementById('drop-zone');
 var uploadForm = document.getElementById('js-upload-form');
 
@@ -49,6 +51,7 @@ function createPreview(files) {
 
   reader.onloadend = function () {
     preview.src = reader.result;
+    $('#img-preview').show();
   }
 
   if (files[0]) {
