@@ -251,6 +251,7 @@ header.masthead p {
   background: rgba(240, 95, 64, 0.9);
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  opacity: 0.75;
 }
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
