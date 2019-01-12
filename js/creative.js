@@ -1,8 +1,67 @@
-(function($) {
+// Upload Section
+
+// UPLOAD CLASS DEFINITION
+// ======================
+
+var dropZone = document.getElementById('drop-zone');
+var uploadForm = document.getElementById('js-upload-form');
+
+var startUpload = function (files) {
+  console.log(files)
+}
+
+uploadForm.addEventListener('submit', function (e) {
+  var uploadFiles = document.getElementById('js-upload-files').files;
+  e.preventDefault()
+
+  startUpload(uploadFiles)
+})
+
+dropZone.ondrop = function (e) {
+  e.preventDefault();
+  this.className = 'upload-drop-zone';
+
+  createPreview(e.dataTransfer.files)
+
+  startUpload(e.dataTransfer.files)
+}
+
+dropZone.ondragover = function () {
+  this.className = 'upload-drop-zone drop';
+  return false;
+}
+
+dropZone.ondragleave = function () {
+  this.className = 'upload-drop-zone';
+  return false;
+}
+
+function createPreview(files) {
+  var preview = document.querySelector('#img-preview');
+  var reader = new FileReader();
+
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  }
+
+  if (files[0]) {
+    reader.readAsDataURL(files[0]);
+  } else {
+    preview.src = "";
+  }
+}
+
+// Upload Section 
+function previewFileClassic() {
+  var files = document.querySelector('input[type=file]').files;
+  createPreview(files);
+}
+
+(function ($) {
   "use strict"; // Start of use strict
 
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -16,7 +75,7 @@
   });
 
   // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
+  $('.js-scroll-trigger').click(function () {
     $('.navbar-collapse').collapse('hide');
   });
 
@@ -27,7 +86,7 @@
   });
 
   // Collapse Navbar
-  var navbarCollapse = function() {
+  var navbarCollapse = function () {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-shrink");
     } else {
