@@ -9,15 +9,53 @@ $('#js-upload-submit').prop("disabled", true);
 var dropZone = document.getElementById('drop-zone');
 var uploadForm = document.getElementById('js-upload-form');
 
+// C3.js
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    x : 'x',
+    columns: [
+        ['x', 'Disease 1', 'Disease 2', 'Disease 3', 'Disease 4', 'Disease 5', 'Disease 6', 'Disease 7'],
+        ['Probability', 0, 0, 0, 0, 0, 0, 0]
+    ],
+    type: 'bar',
+    labels: true,
+    colors: {
+            'Probability': '#FE3637',
+    }
+  },
+  axis: {
+      x: {
+          type: 'category' // this needed to load string x value
+      },
+      rotated: true
+  },
+  legend: {
+    show: false
+  }
+});
+
+// Fit chart to screen
+var screenHeight = Math.floor(screen.height*0.50);
+var screenWidth = Math.floor(screen.width*0.60);
+chart.resize({height:screenHeight, width:screenWidth});
+
 var startUpload = function (files) {
   console.log(files)
   var data = new FormData()
   data.append('input', files[0])
 
-  fetch('http://93136329.ngrok.io/predict-mole', {
+  fetch('http://93136329.ngrok.io/predict-skin-mock', {
     method: 'POST',
     body: data
-  }).then(response => response.json()).then(data => console.log(data));
+  }).then(response => response.json())
+  .then(data => chart.load({
+    columns: [
+        data.labels,
+        data.results,
+    ],
+    unload: true,
+  }));
 }
 
 uploadForm.addEventListener('submit', function (e) {
