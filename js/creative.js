@@ -6,6 +6,7 @@
 $('#img-preview').hide();
 $('#js-upload-submit').prop("disabled", true);
 $('#total-drop-area').show();
+$('#chart').hide();
 
 var dropZone = document.getElementById('drop-zone');
 var uploadForm = document.getElementById('js-upload-form');
@@ -14,22 +15,22 @@ var uploadForm = document.getElementById('js-upload-form');
 var chart = c3.generate({
   bindto: '#chart',
   data: {
-    x : 'x',
+    x : 'Diseases',
     columns: [
-        ['x', 'Disease 1', 'Disease 2', 'Disease 3', 'Disease 4', 'Disease 5', 'Disease 6', 'Disease 7'],
-        ['Probability', 0, 0, 0, 0, 0, 0, 0]
+      ['Diseases', 'Disease 1', 'Disease 2', 'Disease 3', 'Disease 4', 'Disease 5', 'Disease 6', 'Disease 7'],
+      ['Probability', 0, 0, 0, 0, 0, 0, 0]
     ],
     type: 'bar',
     labels: true,
     colors: {
-            'Probability': '#FE3637',
+      'Probability': '#FE3637',
     }
   },
   axis: {
-      x: {
-          type: 'category' // this needed to load string x value
-      },
-      rotated: true
+    x: {
+      type: 'category' // this needed to load string x value
+    },
+    rotated: true
   },
   legend: {
     show: false
@@ -45,13 +46,15 @@ var startUpload = function (files) {
   console.log(files)
   var data = new FormData()
   data.append('input', files[0])
+  console.log(data)
 
-  fetch('http://93136329.ngrok.io/predict-skin-mock', {
+  fetch('https://93136329.ngrok.io/predict-skin', {
     method: 'POST',
     body: data
   })
   .then(response => response.json())
   .then(data => {
+    $('#chart').show(1000);
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#results").offset().top
     }, 1000);
