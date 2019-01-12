@@ -49,13 +49,18 @@ var startUpload = function (files) {
     method: 'POST',
     body: data
   }).then(response => response.json())
-  .then(data => chart.load({
-    columns: [
-        data.labels,
-        data.results,
-    ],
-    unload: true,
-  }));
+  .then(data => {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#results").offset().top
+    }, 1000);    
+    chart.load({
+      columns: [
+          data.labels,
+          data.results,
+      ],
+      unload: true,
+    });
+  });
 }
 
 uploadForm.addEventListener('submit', function (e) {
