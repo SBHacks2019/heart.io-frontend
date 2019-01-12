@@ -125,18 +125,18 @@ img::-moz-selection {
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
   color: #F05F40 !important;
-  background-color: transparent;
+  background-color: #FE3637;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
-  background-color: transparent;
+  background-color: #FE3637;
 }
 
 @media (min-width: 992px) {
   #mainNav {
     border-color: transparent;
-    background-color: transparent;
+    background-color: #FE3637;
   }
   #mainNav .navbar-brand {
     color: rgba(255, 255, 255, 0.7);
