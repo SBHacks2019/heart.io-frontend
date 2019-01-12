@@ -4,6 +4,7 @@
 // ======================
 
 $('#img-preview').hide();
+$('#js-upload-submit').prop("disabled", true);
 
 var dropZone = document.getElementById('drop-zone');
 var uploadForm = document.getElementById('js-upload-form');
@@ -20,8 +21,9 @@ var startUpload = function (files) {
 }
 
 uploadForm.addEventListener('submit', function (e) {
+  console.log(e)
   var uploadFiles = document.getElementById('js-upload-files').files;
-  e.preventDefault()
+  e.preventDefault();
 
   startUpload(uploadFiles)
 })
@@ -52,6 +54,7 @@ function createPreview(files) {
   reader.onloadend = function () {
     preview.src = reader.result;
     $('#img-preview').show();
+    $('#js-upload-submit').prop("disabled", false);
   }
 
   if (files[0]) {
@@ -59,6 +62,15 @@ function createPreview(files) {
   } else {
     preview.src = "";
   }
+}
+
+function clearFiles(event) {
+  //event.preventDefault();
+  document.getElementById('js-upload-files').value = "";
+  var preview = document.querySelector('#img-preview');
+  preview.src = "";
+  $('#img-preview').hide();
+  $('#js-upload-submit').prop("disabled", true);
 }
 
 // Upload Section 
