@@ -245,61 +245,46 @@
     </div>
   </section>
 
-  <section class="bg-dark text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          1 of 2
-        </div>
-        <div class="col">
-          2 of 2
-        </div>
-      </div>
-    </div>
-
-
-    <!------ Include the above in your HEAD tag ---------->
-
-    <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-heading"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>
-        <div class="panel-body">
-
-          <!-- Standar Form -->
-          <h4>Select files from your computer</h4>
-          <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-            <div class="form-inline">
-              <div class="form-group">
-                <input type="file" name="files[]" id="js-upload-files" multiple onchange="previewFileClassic()">
-              </div>
-              <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
-              <button type="button" onclick="clearFiles()" class="btn btn-sm btn-primary" id="js-upload-cancel">Cancel upload</button>
-            </div>
-          </form>
-
-          <!-- Drop Zone -->
-          <h4>Or drag and drop files below</h4>
+  <section class="bg-dark text-black">
+    <div class="container" id="upload-container">
+      <div class="text-center" id="upload-inner-container">
+        <div id="total-drop-area">
+          <h1 style="padding-top: 30px"><i>Upload your Moles</i></h1>
           <div class="upload-drop-zone" id="drop-zone">
-            Just drag and drop files here
+            <i class="fa fa-cloud-upload-alt" style="font-size: 8em"></i>
+            <h2><i>Drag & Drop<br>Files Here</i></h2>
+            <h1>OR</h1>
           </div>
 
-          <img id="img-preview" src="" height="200" alt="Image preview..." >
+          <div class="upload-btn-wrapper">
+            <button type="button" class="btn btn-primary" for="js-upload-files">Choose your files</button>
+            <input type="file" name="files[]" id="js-upload-files" onchange="previewFileClassic()">
+          </div>
+
         </div>
+
+        <img id="img-preview" style="margin-top: 20px; border-style: dashed; border-color: #ccc; border-width: 2px;" src="" width="420px" alt="Image preview...">
+
+        <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+          <br>
+          <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+          <button type="button" onclick="clearFiles()" class="btn btn-sm btn-primary" id="js-upload-cancel">Cancel upload</button>
+        </form>
       </div>
-    </div> <!-- /container -->
+    </div>
   </section>
 
   <section id="results">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Results</h2>
-            <hr class="my-4">
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Results</h2>
+          <hr class="my-4">
         </div>
-        <div id="chart"></div>
       </div>
-    </section>
+      <div id="chart"></div>
+    </div>
+  </section>
 
   <section id="contact">
     <div class="container">

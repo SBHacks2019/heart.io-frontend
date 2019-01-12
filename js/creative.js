@@ -5,6 +5,7 @@
 
 $('#img-preview').hide();
 $('#js-upload-submit').prop("disabled", true);
+$('#total-drop-area').show();
 
 var dropZone = document.getElementById('drop-zone');
 var uploadForm = document.getElementById('js-upload-form');
@@ -48,11 +49,12 @@ var startUpload = function (files) {
   fetch('http://93136329.ngrok.io/predict-skin-mock', {
     method: 'POST',
     body: data
-  }).then(response => response.json())
+  })
+  .then(response => response.json())
   .then(data => {
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#results").offset().top
-    }, 1000);    
+    }, 1000);
     chart.load({
       columns: [
           data.labels,
@@ -60,14 +62,14 @@ var startUpload = function (files) {
       ],
       unload: true,
     });
-  });
+  })
+  .catch(err => console.log(err));
 }
 
 uploadForm.addEventListener('submit', function (e) {
-  console.log(e)
-  var uploadFiles = document.getElementById('js-upload-files').files;
   e.preventDefault();
 
+  var uploadFiles = document.getElementById('js-upload-files').files;
   startUpload(uploadFiles)
 })
 
@@ -75,9 +77,8 @@ dropZone.ondrop = function (e) {
   e.preventDefault();
   this.className = 'upload-drop-zone';
 
+  document.getElementById('js-upload-files').files = e.dataTransfer.files;
   createPreview(e.dataTransfer.files)
-
-  //startUpload(e.dataTransfer.files)
 }
 
 dropZone.ondragover = function () {
@@ -97,6 +98,7 @@ function createPreview(files) {
   reader.onloadend = function () {
     preview.src = reader.result;
     $('#img-preview').show();
+    $('#total-drop-area').hide();
     $('#js-upload-submit').prop("disabled", false);
   }
 
@@ -113,10 +115,11 @@ function clearFiles(event) {
   var preview = document.querySelector('#img-preview');
   preview.src = "";
   $('#img-preview').hide();
+  $('#total-drop-area').show();
   $('#js-upload-submit').prop("disabled", true);
 }
 
-// Upload Section 
+// Upload Section
 function previewFileClassic() {
   var files = document.querySelector('input[type=file]').files;
   createPreview(files);
