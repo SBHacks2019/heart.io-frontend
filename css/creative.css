@@ -103,6 +103,7 @@ img::-moz-selection {
   text-transform: uppercase;
   color: #F05F40;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  padding-left: 10px;
 }
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -208,9 +209,11 @@ header.masthead p {
     min-height: 650px;
     padding-top: 0;
     padding-bottom: 0;
+    color: #162834;
   }
   header.masthead h1 {
     font-size: 3rem;
+    color: #162834;
   }
 }
 
