@@ -17,7 +17,7 @@ body {
 hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #F05F40;
+  border-color: #FE3637;
 }
 
 hr.light {
@@ -307,8 +307,8 @@ header.masthead p {
 }
 
 .btn-primary {
-  background-color: #F05F40;
-  border-color: #F05F40;
+  background-color: #FE3637;
+  border-color: #FE3637;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
