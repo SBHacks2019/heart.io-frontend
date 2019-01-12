@@ -8,6 +8,13 @@ var uploadForm = document.getElementById('js-upload-form');
 
 var startUpload = function (files) {
   console.log(files)
+  var data = new FormData()
+  data.append('input', files[0])
+
+  fetch('http://93136329.ngrok.io/predict-mole', {
+    method: 'POST',
+    body: data
+  }).then(response => response.json()).then(data => console.log(data));
 }
 
 uploadForm.addEventListener('submit', function (e) {
@@ -23,7 +30,7 @@ dropZone.ondrop = function (e) {
 
   createPreview(e.dataTransfer.files)
 
-  startUpload(e.dataTransfer.files)
+  //startUpload(e.dataTransfer.files)
 }
 
 dropZone.ondragover = function () {
