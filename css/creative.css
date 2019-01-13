@@ -52,8 +52,8 @@ h6 {
 }
 
 .bg-dark {
-  background-color: #154360 !important; 
-  /* background-image: url("../img/header.jpg"); */
+  /* background-color: #154360 !important;  */
+  background-image: url("../img/header.jpg");
 }
 
 .text-faded {
@@ -319,12 +319,12 @@ header.masthead p {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #ee4b28 !important;
+  background-color: #FE3637 !important;
 }
 
 .btn-primary:active, .btn-primary:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
-  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+  -webkit-box-shadow: 0 0 0 0.2rem #FE3637 !important;
+  box-shadow: 0 0 0 0.2rem #FE3637 !important;
 }
 
 /* Upload Files Section */
@@ -371,13 +371,13 @@ header.masthead p {
   width: 500px;
   height: auto;
   padding: 15px;
-  background-color: #D6EAF8;
+  background-color: rgb(245, 68, 56);
 }
 
 #upload-inner-container {
-  background-color: #2874A6;
+  background-color: rgb(253, 243, 243);
   padding-bottom: 15px;
-  /* background-image: url("../img/header.png"); */
+  /* background-image: url("../img/header.png");  */
 }
 
 /* Drop Shadow Effect */
