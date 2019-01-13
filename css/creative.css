@@ -53,7 +53,7 @@ h6 {
 
 .bg-dark {
   /* background-color: #154360 !important;  */
-  background-image: url("../img/header.jpg");
+  /* background-image: url("../img/header.jpg"); */
 }
 
 .text-faded {
@@ -181,7 +181,7 @@ img::-moz-selection {
   }
 }
 
-header.masthead {
+header.masthead, #demo {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
   background-image: url("../img/header.png");

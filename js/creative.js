@@ -117,7 +117,7 @@ var startUpload = function (files) {
   data.append('input', files[0])
   console.log(data)
 
-  fetch('https://c502901a.ngrok.io/predict-skin', {
+  fetch('https://14257198.ngrok.io/predict-skin', {
     method: 'POST',
     body: data
   })
