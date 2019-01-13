@@ -42,31 +42,95 @@ var screenHeight = Math.floor(screen.height*0.50);
 var screenWidth = Math.floor(screen.width*0.60);
 chart.resize({height:screenHeight, width:screenWidth});
 
-var startUpload = function (files) {
-  console.log(files)
-  var data = new FormData()
-  data.append('input', files[0])
-  console.log(data)
+function populateResults(data) {
+  for (i = 0; i < data.labels.length; i++) {
+    if (data.labels[i] === 'Melanocytic nevi') {
+      $('#results-nv h3').text(data.results[i].toString() + '%');
+    }
+    if (data.labels[i] === 'Melanoma') {
+      $('#results-mel h3').text(data.results[i].toString() + '%');
+    }
+    if (data.labels[i] === 'Basal cell carcinoma') {
+      $('#results-bcc h3').text(data.results[i].toString() + '%');
+    }
+    if (data.labels[i] === 'Actinic keratoses') {
+      $('#results-akiec h3').text(data.results[i].toString() + '%');
+    }
+    if (data.labels[i] === 'Vascular lesions') {
+      $('#results-vasc h3').text(data.results[i].toString() + '%');
+    }
+    if (data.labels[i] === 'Dermatofibroma') {
+      $('#results-df h3').text(data.results[i].toString() + '%');
+    }
+  }
+}
 
-  fetch('https://93136329.ngrok.io/predict-skin', {
-    method: 'POST',
-    body: data
-  })
-  .then(response => response.json())
-  .then(data => {
-    $('#chart').show(1000);
-    $([document.documentElement, document.body]).animate({
-      scrollTop: $("#results").offset().top
-    }, 1000);
-    chart.load({
-      columns: [
-          data.labels,
-          data.results,
-      ],
-      unload: true,
-    });
-  })
-  .catch(err => console.log(err));
+function populatePrimaryResult(data) {
+  var maxLabel = data.labels[1];
+  var maxValue = data.results[1];
+  for (i = 2; i < data.labels.length; i++) {
+    if (data.results[i] >= maxValue) {
+      maxLabel = data.labels[i];
+      maxValue = data.results[i];
+    }
+  }
+  if (maxLabel === 'Melanocytic nevi') {
+    $('#results-primary h3').text('Melanocytic nevi');
+    $('#results-primary h1').text(maxValue.toString() + '%');
+    $('#results-primary p').text('This type of mole is often large and caused by a disorder involving melanocytes, cells that produce pigment (melanin). Melanocytic nevi can be rough, flat, or raised. They can exist at birth or appear later. Rarely, melanocytic nevi can become cancerous. Most cases don\'t require treatment, but some cases require removal of the mole.');
+  }
+  if (maxLabel === 'Melanoma') {
+    $('#results-primary h3').text('Melanoma');
+    $('#results-primary h1').text(maxValue.toString() + '%');
+    $('#results-primary p').text('Melanoma occurs when the pigment-producing cells that give color to the skin become cancerous. Symptoms might include a new, unusual growth or a change in an existing mole. Melanomas can occur anywhere on the body. Treatment may involve surgery, radiation, medications, or in some cases chemotherapy.');
+  }
+  if (maxLabel === 'Basal cell carcinoma') {
+    $('#results-primary h3').text('Basal cell carcinoma');
+    $('#results-primary h1').text(maxValue.toString() + '%');
+    $('#results-primary p').text('Basal cells produce new skin cells as old ones die. Limiting sun exposure can help prevent these cells from becoming cancerous. This cancer typically appears as a white waxy lump or a brown scaly patch on sun-exposed areas, such as the face and neck. Treatments include prescription creams or surgery to remove the cancer.');
+  }
+  if (maxLabel === 'Actinic keratoses') {
+    $('#results-primary h3').text('Actinic keratoses');
+    $('#results-primary h1').text(maxValue.toString() + '%');
+    $('#results-primary p').text('Actinic keratosis usually affects older adults. Reducing sun exposure can help reduce risk. It is most common on the face, lips, ears, back of hands, forearms, scalp, and neck. The rough, scaly skin patch enlarges slowly and usually causes no other signs or symptoms. A lesion may take years to develop. Because it can become cancerous, it\'s usually removed as a precaution.');
+  }
+  if (maxLabel === 'Vascular lesions') {
+    $('#results-primary h3').text('Vascular lesions');
+    $('#results-primary h1').text(maxValue.toString() + '%');
+    $('#results-primary p').text('Cutaneous vascular lesions are the most common pediatric birthmarks. Flat vascular malformations tend to persist, but raised vascular lesions, known as hemangiomas, generally involute. Although not always necessary, treatment of flat lesions, if desired, is best accomplished with flash-lamp pumped pulsed dye laser.');
+  }
+  if (maxLabel === 'Dermatofibroma') {
+    $('#results-primary h3').text('Dermatofibroma');
+    $('#results-primary h1').text(maxValue.toString() + '%');
+    $('#results-primary p').text('Dermatofibroma (superficial benign fibrous histiocytoma) is a common cutaneous nodule of unknown etiology that occurs more often in women. Dermatofibroma frequently develops on the extremities (mostly the lower legs) and is usually asymptomatic, although pruritus and tenderness can be present.');
+  }
+}
+
+var tempData = {
+  labels: ['Diseases', 'Melanocytic nevi', 'Melanoma', 'Basal cell carcinoma', 'Actinic keratoses', 'Vascular lesions', 'Dermatofibroma'],
+  results: ['Probabilities', 7, 8, 9, 10, 11, 12]
+};
+
+var startUpload = function (files) {
+  // console.log(files)
+  // var data = new FormData()
+  // data.append('input', files[0])
+  // console.log(data)
+
+  // fetch('https://93136329.ngrok.io/predict-skin', {
+  //   method: 'POST',
+  //   body: data
+  // })
+  // .then(response => response.json())
+  // .then(data => {
+  //   $([document.documentElement, document.body]).animate({
+  //     scrollTop: $("#results").offset().top
+  //   }, 1000);
+  //   populateResults(data);
+  // })
+  // .catch(err => console.log(err));
+  populateResults(tempData);
+  populatePrimaryResult(tempData);
 }
 
 uploadForm.addEventListener('submit', function (e) {
