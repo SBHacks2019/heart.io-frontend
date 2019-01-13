@@ -123,7 +123,10 @@ var startUpload = function (files) {
   data.append('input', files[0])
   console.log(data)
 
-  fetch('https://14257198.ngrok.io/predict-skin', {
+  // predict_url = 'https://14257198.ngrok.io/predict-skin'
+  predict_url = 'https://us-central1-project-2b1s.cloudfunctions.net/skin-prediction'
+
+  fetch(predict_url, {
     method: 'POST',
     body: data
   })
