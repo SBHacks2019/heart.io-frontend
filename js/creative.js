@@ -45,33 +45,33 @@ chart.resize({height:screenHeight, width:screenWidth});
 function populateResults(data) {
   for (i = 0; i < data.labels.length; i++) {
     if (data.labels[i] === 'Melanocytic nevi') {
-      $('#results-nv h3').text(data.results[i].toString() + '%');
+      $('#results-nv h3').text(Math.round(data.results[i]).toString() + '%');
     }
     if (data.labels[i] === 'Melanoma') {
-      $('#results-mel h3').text(data.results[i].toString() + '%');
+      $('#results-mel h3').text(Math.round(data.results[i]).toString() + '%');
     }
     if (data.labels[i] === 'Basal cell carcinoma') {
-      $('#results-bcc h3').text(data.results[i].toString() + '%');
+      $('#results-bcc h3').text(Math.round(data.results[i]).toString() + '%');
     }
     if (data.labels[i] === 'Actinic keratoses') {
-      $('#results-akiec h3').text(data.results[i].toString() + '%');
+      $('#results-akiec h3').text(Math.round(data.results[i]).toString() + '%');
     }
     if (data.labels[i] === 'Vascular lesions') {
-      $('#results-vasc h3').text(data.results[i].toString() + '%');
+      $('#results-vasc h3').text(Math.round(data.results[i]).toString() + '%');
     }
     if (data.labels[i] === 'Dermatofibroma') {
-      $('#results-df h3').text(data.results[i].toString() + '%');
+      $('#results-df h3').text(Math.round(data.results[i]).toString() + '%');
     }
   }
 }
 
 function populatePrimaryResult(data) {
   var maxLabel = data.labels[1];
-  var maxValue = data.results[1];
+  var maxValue = Math.round(data.results[1]);
   for (i = 2; i < data.labels.length; i++) {
     if (data.results[i] >= maxValue) {
       maxLabel = data.labels[i];
-      maxValue = data.results[i];
+      maxValue = Math.round(data.results[i]);
     }
   }
   if (maxLabel === 'Melanocytic nevi') {
@@ -112,25 +112,26 @@ var tempData = {
 };
 
 var startUpload = function (files) {
-  // console.log(files)
-  // var data = new FormData()
-  // data.append('input', files[0])
-  // console.log(data)
+  console.log(files)
+  var data = new FormData()
+  data.append('input', files[0])
+  console.log(data)
 
-  // fetch('https://93136329.ngrok.io/predict-skin', {
-  //   method: 'POST',
-  //   body: data
-  // })
-  // .then(response => response.json())
-  // .then(data => {
-  //   $([document.documentElement, document.body]).animate({
-  //     scrollTop: $("#results").offset().top
-  //   }, 1000);
-  //   populateResults(data);
-  // })
-  // .catch(err => console.log(err));
-  populateResults(tempData);
-  populatePrimaryResult(tempData);
+  fetch('https://c502901a.ngrok.io/predict-skin', {
+    method: 'POST',
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#results").offset().top
+    }, 1000);
+    populateResults(data);
+    populatePrimaryResult(data);
+  })
+  .catch(err => console.log(err));
+  // populateResults(tempData);
+  // populatePrimaryResult(tempData);
 }
 
 uploadForm.addEventListener('submit', function (e) {
