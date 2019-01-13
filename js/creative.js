@@ -78,31 +78,37 @@ function populatePrimaryResult(data) {
     $('#results-primary h3').text('Melanocytic nevi');
     $('#results-primary h1').text(maxValue.toString() + '%');
     $('#results-primary p').text('This type of mole is often large and caused by a disorder involving melanocytes, cells that produce pigment (melanin). Melanocytic nevi can be rough, flat, or raised. They can exist at birth or appear later. Rarely, melanocytic nevi can become cancerous. Most cases don\'t require treatment, but some cases require removal of the mole.');
+    $('#results-primary img').attr('src', 'img/001-bacteria-1.svg');
   }
   if (maxLabel === 'Melanoma') {
     $('#results-primary h3').text('Melanoma');
     $('#results-primary h1').text(maxValue.toString() + '%');
     $('#results-primary p').text('Melanoma occurs when the pigment-producing cells that give color to the skin become cancerous. Symptoms might include a new, unusual growth or a change in an existing mole. Melanomas can occur anywhere on the body. Treatment may involve surgery, radiation, medications, or in some cases chemotherapy.');
+    $('#results-primary img').attr('src', 'img/002-bacteria.svg');
   }
   if (maxLabel === 'Basal cell carcinoma') {
     $('#results-primary h3').text('Basal cell carcinoma');
     $('#results-primary h1').text(maxValue.toString() + '%');
     $('#results-primary p').text('Basal cells produce new skin cells as old ones die. Limiting sun exposure can help prevent these cells from becoming cancerous. This cancer typically appears as a white waxy lump or a brown scaly patch on sun-exposed areas, such as the face and neck. Treatments include prescription creams or surgery to remove the cancer.');
+    $('#results-primary img').attr('src', 'img/003-bacteria-2.svg');
   }
   if (maxLabel === 'Actinic keratoses') {
     $('#results-primary h3').text('Actinic keratoses');
     $('#results-primary h1').text(maxValue.toString() + '%');
     $('#results-primary p').text('Actinic keratosis usually affects older adults. Reducing sun exposure can help reduce risk. It is most common on the face, lips, ears, back of hands, forearms, scalp, and neck. The rough, scaly skin patch enlarges slowly and usually causes no other signs or symptoms. A lesion may take years to develop. Because it can become cancerous, it\'s usually removed as a precaution.');
+    $('#results-primary img').attr('src', 'img/004-bacteria-3.svg');
   }
   if (maxLabel === 'Vascular lesions') {
     $('#results-primary h3').text('Vascular lesions');
     $('#results-primary h1').text(maxValue.toString() + '%');
     $('#results-primary p').text('Cutaneous vascular lesions are the most common pediatric birthmarks. Flat vascular malformations tend to persist, but raised vascular lesions, known as hemangiomas, generally involute. Although not always necessary, treatment of flat lesions, if desired, is best accomplished with flash-lamp pumped pulsed dye laser.');
+    $('#results-primary img').attr('src', 'img/008-healthcare-and-medical.svg');
   }
   if (maxLabel === 'Dermatofibroma') {
     $('#results-primary h3').text('Dermatofibroma');
     $('#results-primary h1').text(maxValue.toString() + '%');
     $('#results-primary p').text('Dermatofibroma (superficial benign fibrous histiocytoma) is a common cutaneous nodule of unknown etiology that occurs more often in women. Dermatofibroma frequently develops on the extremities (mostly the lower legs) and is usually asymptomatic, although pruritus and tenderness can be present.');
+    $('#results-primary img').attr('src', 'img/010-virus-2.svg');
   }
 }
 
