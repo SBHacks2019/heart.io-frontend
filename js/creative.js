@@ -42,6 +42,15 @@ var screenHeight = Math.floor(screen.height*0.50);
 var screenWidth = Math.floor(screen.width*0.60);
 chart.resize({height:screenHeight, width:screenWidth});
 
+function populateResults(data) {
+  // TODO: use the arrays data.labels and data.results to populate the results
+  for (i = 0; i < data.labels.length; i++) {
+    // if (data.labels === ) {
+
+    // }
+  }
+}
+
 var startUpload = function (files) {
   console.log(files)
   var data = new FormData()
@@ -54,17 +63,10 @@ var startUpload = function (files) {
   })
   .then(response => response.json())
   .then(data => {
-    $('#chart').show(1000);
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#results").offset().top
     }, 1000);
-    chart.load({
-      columns: [
-          data.labels,
-          data.results,
-      ],
-      unload: true,
-    });
+    populateResults(data);
   })
   .catch(err => console.log(err));
 }
