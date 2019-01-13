@@ -52,7 +52,7 @@ h6 {
 }
 
 .bg-dark {
-  background-color: #FE3637 !important; 
+  background-color: #154360 !important; 
   /* background-image: url("../img/header.jpg"); */
 }
 
@@ -184,7 +184,7 @@ img::-moz-selection {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../img/header.jpg");
+  background-image: url("../img/header.png");
   background-position: center center;
   background-size: cover;
 }
@@ -371,13 +371,13 @@ header.masthead p {
   width: 500px;
   height: auto;
   padding: 15px;
-  background-color: #F9B3B2;
+  background-color: #D6EAF8;
 }
 
 #upload-inner-container {
-  background-color: #FAD9D8;
+  background-color: #2874A6;
   padding-bottom: 15px;
-  /* background-image: url("../img/header.jpg"); */
+  /* background-image: url("../img/header.png"); */
 }
 
 /* Drop Shadow Effect */
