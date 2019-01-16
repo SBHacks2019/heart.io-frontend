@@ -52,8 +52,7 @@ It sometimes takes one gentle push for a person to change their lifestyle for th
 - [https://devpost.com/software/heart-io](https://devpost.com/software/heart-io)
 - [https://github.com/2B1S/heart.io-frontend](https://github.com/2B1S/heart.io-frontend)
 - [https://github.com/2B1S/heart.io-backend](https://github.com/2B1S/heart.io-backend)
-
-[![heart.io Demo](http://img.youtube.com/vi/QKcd7p2ow-Y/0.jpg)](http://www.youtube.com/watch?v=QKcd7p2ow-Y)
+- [https://www.youtube.com/watch?v=QKcd7p2ow-Y](https://www.youtube.com/watch?v=QKcd7p2ow-Y)
 
 ## Contributors
 - [sdulaney](https://github.com/sdulaney)
