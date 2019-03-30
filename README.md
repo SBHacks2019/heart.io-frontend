@@ -48,10 +48,10 @@ After seeing our success with 6 diseases. We will be adding more diseases for ou
 It sometimes takes one gentle push for a person to change their lifestyle for the better. In the spirit of self improvement, we want heart.io to do just that.
 
 ## Check it out
-- [https://2b1s.github.io/heart.io-frontend/](https://2b1s.github.io/heart.io-frontend/)
+- [https://sbhacks2019.github.io/heart.io-frontend/](https://sbhacks2019.github.io/heart.io-frontend/)
 - [https://devpost.com/software/heart-io](https://devpost.com/software/heart-io)
-- [https://github.com/2B1S/heart.io-frontend](https://github.com/2B1S/heart.io-frontend)
-- [https://github.com/2B1S/heart.io-backend](https://github.com/2B1S/heart.io-backend)
+- [https://github.com/SBHacks2019/heart.io-frontend](https://github.com/SBHacks2019/heart.io-frontend)
+- [https://github.com/SBHacks2019/heart.io-backend](https://github.com/SBHacks2019/heart.io-backend)
 - [https://www.youtube.com/watch?v=QKcd7p2ow-Y](https://www.youtube.com/watch?v=QKcd7p2ow-Y)
 
 ## Contributors
