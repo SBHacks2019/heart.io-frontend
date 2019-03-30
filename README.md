@@ -1,4 +1,5 @@
 # heart.io-frontend
+[![Devpost | heart.io](https://badges.devpost-shields.com/get-badge?name=heart.io&id=heart-io&type=big-logo&style=flat)](https://devpost.com/software/heart-io)
 
 ![heart.io Screenshots](https://www.stewartdulaney.com/wp-content/uploads/sites/7/2019/01/heart.io_.gif "heart.io")
 
